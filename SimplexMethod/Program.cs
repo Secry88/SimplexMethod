@@ -29,14 +29,7 @@ namespace SimplexMethod
 
             for (int j = 0; j < vars; j++)
             {
-                if (type == "max")
-                {
-                    simplexTable[rows, j] = -targetFunction[j]; //заполнение строки целевой функции при решении задачи на максимум
-                }
-                else
-                {
-                    simplexTable[rows, j] = targetFunction[j]; //заполнение строки целевой функции при решении задачи на минимум
-                }
+                simplexTable[rows, j] = -targetFunction[j]; //заполнение строки целевой функции при решении задачи на максимум
             }
 
             while (true) //основной алгоритм решения задачи 
@@ -123,7 +116,6 @@ namespace SimplexMethod
                     for (int j = 0; j < cols; j++)
                         simplexTable[i, j] -= simplexTable[mainString, j] * koef; // зануление элементов в ведущем столбце
                 }
-
             }
         }
         public void printResult(double[,] simplexTable, int vars, int rows, string type)
@@ -131,7 +123,7 @@ namespace SimplexMethod
             int lastRow = simplexTable.GetLength(0) - 1;
             int lastCol = simplexTable.GetLength(1) - 1;
 
-            Console.WriteLine($"Оптимальное значение: {(type == "max" ? 1 : -1) * simplexTable[lastRow, lastCol]}");
+            Console.WriteLine($"L(x): {simplexTable[lastRow, lastCol]}");
             for (int j = 0; j < vars; j++)
             {
                 double value = 0;
@@ -150,7 +142,6 @@ namespace SimplexMethod
                                 break;
                             }
                         }
-
                         if (isBasic)
                         {
                             value = simplexTable[i, vars + rows];
@@ -176,18 +167,19 @@ namespace SimplexMethod
             { 9, 5, 45 }
         };
 
-            Console.WriteLine("=== Максимизация ===");
-           simplexMethod.simplexMethodSolution(constraintsMax, targetFunctionMax, "max");
+            Console.WriteLine("Задача на максимум");
+            simplexMethod.simplexMethodSolution(constraintsMax, targetFunctionMax, "max");
 
-            double[] targetFunctionMin = { 2, 5 };
+            double[] targetFunctionMin = { 1, -1, -3 };
             double[,] constraintsMin = {
-            { -1, -1, -6 },
-            { -1, -3, -9 },
-            { 2, 1, 8 }
+            { 2, -1, 1, 1 },
+            { -4, 2, -1, 2 },
+            {3, 0 , 1, 5}
         };
 
-            Console.WriteLine("\n=== Минимизация ===");
+            Console.WriteLine("\nЗадача на минимум");
             simplexMethod.simplexMethodSolution(constraintsMin, targetFunctionMin, "min");
+
             Console.ReadKey();
         }
     }
