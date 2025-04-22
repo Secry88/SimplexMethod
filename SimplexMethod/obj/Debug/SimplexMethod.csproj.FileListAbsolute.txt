@@ -1,0 +1,7 @@
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\bin\Debug\SimplexMethod.exe.config
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\bin\Debug\SimplexMethod.exe
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\bin\Debug\SimplexMethod.pdb
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\obj\Debug\SimplexMethod.csproj.AssemblyReference.cache
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\obj\Debug\SimplexMethod.csproj.CoreCompileInputs.cache
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\obj\Debug\SimplexMethod.exe
+D:\domashka\3 KURS\MatModel\SimplexMethod\SimplexMethod\obj\Debug\SimplexMethod.pdb
